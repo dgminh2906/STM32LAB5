@@ -10,7 +10,7 @@
 void command_parser_fsm() {
 	switch(status_parser) {
 		case INIT_STR:
-			// If string starts with char '!', status = WAIT_END, begins reading the command
+			// If received char '!', status = WAIT_END, begin reading the command
 			if(temp == '!') {
 				status_parser = WAIT_END;
 				command_index = 0;
@@ -25,19 +25,18 @@ void command_parser_fsm() {
 				command[command_index] = '\0';
 				command_flag = 1;
 			}
-			// Else
 			else {
-				// If received char '!', reset command_index, reread the command
-				if (temp == '!')
-					command_index = 0;
+				// If received char '!', reset command_index, read the command again
+				if (temp == '!') command_index = 0;
+				// Else continue to read the command
 				else {
-				// Else, continue reading the command
 					command[command_index++] = temp;
 					if (command_index == MAX_BUFFER_SIZE) command_index = 0;
 				}
 			}
 			break;
+
 		default:
 			break;
-		}
+	}
 }

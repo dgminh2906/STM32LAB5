@@ -7,7 +7,7 @@
 
 #include "uart_communication.h"
 
-void uart_communiation_fsm(ADC_HandleTypeDef hadc1, UART_HandleTypeDef huart2) {
+void uart_communication_fsm(ADC_HandleTypeDef hadc1, UART_HandleTypeDef huart2) {
 	switch(status_uart) {
 		case WAIT_RST:
 			// If command has completed and command = "RST" -> status = SEND_ADC, update ADC_Value, flag = 0 and setTimer
@@ -49,5 +49,5 @@ void uart_communiation_fsm(ADC_HandleTypeDef hadc1, UART_HandleTypeDef huart2) {
 			break;
 		default:
 			break;
-		}
+	}
 }

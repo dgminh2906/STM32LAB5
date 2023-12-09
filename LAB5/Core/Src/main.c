@@ -116,6 +116,8 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  setTimer(0, 1000);
+  clearTimer(1);
   while (1)
   {
     /* USER CODE END WHILE */
@@ -132,7 +134,7 @@ int main(void)
 	  		  buffer_flag = 0;
 	  	  }
 	  	  // uart_communiation_fsm function
-	  	  uart_communiation_fsm(hadc1, huart2);
+	  	  uart_communication_fsm(hadc1, huart2);
   }
   /* USER CODE END 3 */
 }
@@ -323,12 +325,6 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(LED_RED_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : PA6 */
-  GPIO_InitStruct.Pin = GPIO_PIN_6;
-  GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
 }
 
