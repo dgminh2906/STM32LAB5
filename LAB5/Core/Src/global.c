@@ -5,7 +5,7 @@
  *      Author: LENOVO
  */
 
-// Init status
+// Initial status
 #include "global.h"
 int status_parser = INIT_STR;
 int status_uart = WAIT_RST;

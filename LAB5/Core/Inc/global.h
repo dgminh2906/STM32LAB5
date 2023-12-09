@@ -18,6 +18,8 @@
 #define WAIT_RST 		10
 #define SEND_ADC		11
 #define WAIT_OK 		12
+
+// Max size of buffer
 #define MAX_BUFFER_SIZE 30
 
 extern int status_parser;
@@ -36,6 +38,7 @@ extern uint8_t command_index;
 
 // String to display console
 extern char str[50];
+
 // ADC Value
 extern uint32_t ADC_value;
 

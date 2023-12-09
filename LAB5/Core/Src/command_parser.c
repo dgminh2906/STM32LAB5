@@ -18,8 +18,8 @@ void command_parser_fsm() {
 			break;
 
 		case WAIT_END:
-			// If string ends with char '#', status = INIT_STR, save the command to
-			// go to analysis in uart_communication_fsm function, set command_flag = 1.
+			// If string ends with char '#', status = INIT_STR, save the command and
+			// go to uart_communication_fsm function, set command_flag = 1.
 			if(temp == '#') {
 				status_parser = INIT_STR;
 				command[command_index] = '\0';
